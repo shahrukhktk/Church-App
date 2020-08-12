@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/ResetPasswordScreens/codeverification.dart';
 
+import 'fingerprint_login.dart';
+
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -156,8 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Icon(
                         Icons.fingerprint, color: Colors.white, size: 30,
                       ),
-//                        child: Image(image: AssetImage("images/fingerprint_ic.png"),)
-                        ),
+                    ),
                     Center(
                       child: Padding(
                         padding: const EdgeInsets.only(right: 90.0),
@@ -170,8 +171,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 onPressed: ()
                 {
-//                  Navigator.push(context,
-//                    MaterialPageRoute(builder: (context) => OrderConfirmation()),);
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FingerPrintLogin()),);
                 },
               ),
             ),
