@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/facerecognition_login.dart';
+import 'package:rccg_app/Screens/AuthenticationScreens/login.dart';
 import 'package:rccg_app/Screens/ResetPasswordScreens/codeverification.dart';
 import 'package:rccg_app/Screens/widgets/dropdown_widget.dart';
 
@@ -407,8 +408,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
           GestureDetector(
             onTap: ()
             {
-//              Navigator.push(context,
-//                MaterialPageRoute(builder: (context) => SignUpScreen()),);
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => LoginScreen()),);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -426,7 +427,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
 
           SizedBox(height: 20,),
-
 
         ],
       ),
