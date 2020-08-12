@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'login.dart';
+import 'package:rccg_app/Screens/AuthenticationScreens/facerecognition_login.dart';
+import 'package:rccg_app/Screens/ResetPasswordScreens/codeverification.dart';
+
+import 'fingerprint_login.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -8,28 +12,70 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
 
+  //init radio button variable
+  int selectedRadioBtn;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    selectedRadioBtn = 0;
+  }
+
+  setSelectedRadioBtn(int val)
+  {
+    setState(() {
+      selectedRadioBtn = val;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
 
-    final emailTextForm = TextFormField(
-        keyboardType: TextInputType.emailAddress,
+    final usernameTextForm = TextFormField(
+        keyboardType: TextInputType.text,
         decoration: InputDecoration(
-          hoverColor: Colors.red,
-          focusColor: Colors.red,
-          labelText: "Email",
+          hoverColor: Color.fromARGB(255, 39, 23, 112),
+          focusColor: Color.fromARGB(255, 39, 23, 112),
+          labelText: "Username",
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          prefixIcon: Icon(Icons.alternate_email, color: Colors.red),
-          fillColor: Colors.red,
+          prefixIcon: Icon(Icons.person, color: Color.fromARGB(255, 39, 23, 112),),
+          fillColor: Color.fromARGB(255, 39, 23, 112),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
             borderSide: BorderSide(
-              color: Colors.red,
+              color: Color.fromARGB(255, 39, 23, 112),
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
             borderSide: BorderSide(
-              color: Colors.red,
+              color: Color.fromARGB(255, 39, 23, 112),
+              width: 1.0,
+            ),
+          ),
+        )
+    );
+
+    final emailTextForm = TextFormField(
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoration(
+          hoverColor: Color.fromARGB(255, 39, 23, 112),
+          focusColor: Color.fromARGB(255, 39, 23, 112),
+          labelText: "Email",
+          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          prefixIcon: Icon(Icons.alternate_email, color: Color.fromARGB(255, 39, 23, 112),),
+          fillColor: Color.fromARGB(255, 39, 23, 112),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5.0),
+            borderSide: BorderSide(
+              color: Color.fromARGB(255, 39, 23, 112),
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5.0),
+            borderSide: BorderSide(
+              color: Color.fromARGB(255, 39, 23, 112),
               width: 1.0,
             ),
           ),
@@ -39,47 +85,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final phoneTextForm = TextFormField(
         keyboardType: TextInputType.phone,
         decoration: InputDecoration(
-          hoverColor: Colors.red,
-          focusColor: Colors.red,
+          hoverColor: Color.fromARGB(255, 39, 23, 112),
+          focusColor: Color.fromARGB(255, 39, 23, 112),
           labelText: "Phone",
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          prefixIcon: Icon(Icons.phone, color: Colors.red),
-          fillColor: Colors.red,
+          prefixIcon: Icon(Icons.local_phone, color: Color.fromARGB(255, 39, 23, 112),),
+          fillColor: Color.fromARGB(255, 39, 23, 112),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
             borderSide: BorderSide(
-              color: Colors.red,
+              color: Color.fromARGB(255, 39, 23, 112),
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
             borderSide: BorderSide(
-              color: Colors.red,
-              width: 1.0,
-            ),
-          ),
-        )
-    );
-
-    final userTextForm = TextFormField(
-        keyboardType: TextInputType.text,
-        decoration: InputDecoration(
-          hoverColor: Colors.red,
-          focusColor: Colors.red,
-          labelText: "Name",
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          prefixIcon: Icon(Icons.person_outline, color: Colors.red),
-          fillColor: Colors.red,
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.0),
-            borderSide: BorderSide(
-              color: Colors.red,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.0),
-            borderSide: BorderSide(
-              color: Colors.red,
+              color: Color.fromARGB(255, 39, 23, 112),
               width: 1.0,
             ),
           ),
@@ -89,22 +110,47 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final passwordTextForm = TextFormField(
         keyboardType: TextInputType.visiblePassword,
         decoration: InputDecoration(
-          hoverColor: Colors.red,
-          focusColor: Colors.red,
+          hoverColor: Color.fromARGB(255, 39, 23, 112),
+          focusColor: Color.fromARGB(255, 39, 23, 112),
           labelText: "Password",
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          prefixIcon: Icon(Icons.lock_open, color: Colors.red),
-          fillColor:Colors.red,
+          prefixIcon: Icon(Icons.lock_open, color:Color.fromARGB(255, 39, 23, 112),),
+          fillColor: Color.fromARGB(255, 39, 23, 112),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
             borderSide: BorderSide(
-              color: Colors.red,
+              color: Color.fromARGB(255, 39, 23, 112),
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5.0),
             borderSide: BorderSide(
-              color: Colors.red,
+              color: Color.fromARGB(255, 39, 23, 112),
+              width: 1.0,
+            ),
+          ),
+        )
+    );
+
+    final confirmPasswordTextForm = TextFormField(
+        keyboardType: TextInputType.visiblePassword,
+        decoration: InputDecoration(
+          hoverColor: Color.fromARGB(255, 39, 23, 112),
+          focusColor: Color.fromARGB(255, 39, 23, 112),
+          labelText: "Confirm Password",
+          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          prefixIcon: Icon(Icons.lock_open, color:Color.fromARGB(255, 39, 23, 112),),
+          fillColor: Color.fromARGB(255, 39, 23, 112),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5.0),
+            borderSide: BorderSide(
+              color: Color.fromARGB(255, 39, 23, 112),
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5.0),
+            borderSide: BorderSide(
+              color: Color.fromARGB(255, 39, 23, 112),
               width: 1.0,
             ),
           ),
@@ -117,25 +163,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
         padding: EdgeInsets.all(20),
         children: <Widget>[
 
-          SizedBox(height: 70,),
+          SizedBox(height: 20,),
+
+          Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Image(image: AssetImage('images/logo.png'), height: 100,),
+              )),
 
           Center(
-            child: Text('SIGN UP', style: TextStyle(
+            child: Text('Create Your Account', style: TextStyle(
               fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.black,
             ),),
           ),
-          SizedBox(height: 10,),
-          Center(
-            child: Text('register your account for free', style: TextStyle(
-              fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.grey[600],
-            ),),
-          ),
 
-          SizedBox(height: 50,),
+          SizedBox(height: 20,),
 
           Padding(
             padding: EdgeInsets.all(10.0),
-            child: userTextForm,
+            child: usernameTextForm,
           ),
 
           Padding(
@@ -153,16 +200,84 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: passwordTextForm,
           ),
 
-          SizedBox(height: 20,),
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: confirmPasswordTextForm,
+          ),
 
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              'Select One', style: TextStyle(
+              fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w600, color: Colors.black,
+            ),),
+          ),
+
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Row(
+              children: <Widget>[
+                ButtonBar(
+                  alignment: MainAxisAlignment.center,
+                  children: <Widget>[
+
+                    Row(
+                      children: <Widget>[
+                        Radio(
+                          value: 1,
+                          groupValue: selectedRadioBtn,
+                          activeColor: Color.fromARGB(255, 39, 23, 112),
+
+                          onChanged: (val)
+                          {
+                            setSelectedRadioBtn(val);
+                          },
+                        ),
+                        Text(
+                          'Pestor', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w600, color: Colors.black,
+                        ),),
+                      ],
+                    ),
+
+                    Row(
+                      children: <Widget>[
+                        Radio(
+                          value: 2,
+                          groupValue: selectedRadioBtn,
+                          activeColor: Color.fromARGB(255, 39, 23, 112),
+
+                          onChanged: (val)
+                          {
+                            setSelectedRadioBtn(val);
+                          },
+                        ),
+                        Text(
+                          'Member', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w600, color: Colors.black,
+                        ),),
+                      ],
+                    ),
+
+                  ],
+                ),
+              ],
+            )
+          ),
+
+
+
+          SizedBox(height: 50,),
+
+          //signup via email btn
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: SizedBox(
               width: 200.0,
               height: 50.0,
               child: new RaisedButton(
-                color: Colors.red,
-                child: new Text('SIGN UP', style: TextStyle(
+                color: Color.fromARGB(255, 39, 23, 112),
+                child: new Text('Sign Up', style: TextStyle(
                   fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.white,
                 ),),
                 onPressed: ()
@@ -174,24 +289,99 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
 
+          SizedBox(height: 10,),
+
+          //fingerprint btn
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SizedBox(
+              width: 200.0,
+              height: 50.0,
+              child: new RaisedButton(
+                color: Color.fromARGB(255, 39, 23, 112),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Center(
+                      child: Icon(
+                        Icons.fingerprint, color: Colors.white, size: 30,
+                      ),
+                    ),
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 90.0),
+                        child: Text('Fingerprint', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.white,
+                        ),),
+                      ),
+                    ),
+                  ],
+                ),
+                onPressed: ()
+                {
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FingerPrintLogin()),);
+                },
+              ),
+            ),
+          ),
+
+          SizedBox(height: 10,),
+
+          //face recongintion btn
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SizedBox(
+              width: 200.0,
+              height: 50.0,
+              child: new RaisedButton(
+                color: Color.fromARGB(255, 39, 23, 112),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Center(
+                        child: Image(image: AssetImage("images/face_ic.png"),),
+                    ),
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 75.0),
+                        child: Text('Face Recognition', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.white,
+                        ),),
+                      ),
+                    ),
+                  ],
+                ),
+                onPressed: ()
+                {
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FaceLogin()),);
+                },
+              ),
+            ),
+          ),
+
+
           SizedBox(height: 20,),
 
           GestureDetector(
             onTap: ()
             {
-              Navigator.push(context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),);
+//              Navigator.push(context,
+//                MaterialPageRoute(builder: (context) => SignUpScreen()),);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "Do you already have an account?  ", textAlign: TextAlign.center, style: TextStyle(
+                  "Don't have an account yet?  ", textAlign: TextAlign.center, style: TextStyle(
                     fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.grey[700]
                 ),),
                 Text(
-                  "Log in", textAlign: TextAlign.center, style: TextStyle(
-                    fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.red
+                  "Sign Up", textAlign: TextAlign.center, style: TextStyle(
+                    fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w500, color: Color.fromARGB(255, 39, 23, 112),
                 ),),
               ],
             ),
@@ -199,43 +389,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
           SizedBox(height: 20,),
 
-          Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  GestureDetector(
-                    child: Text(
-                      "ENGLISH", textAlign: TextAlign.center, style: TextStyle(
-                        fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.red
-                    ),),
-                    onTap: ()
-                    {
-                      //TODO: ENGLISH LANGUAGE TRANSLATION
-                    },
-                  ),
-
-                Container(
-                  height: 20.0,
-                  width: 1.0,
-                  color: Colors.grey[700],
-                  margin: const EdgeInsets.only(left: 10.0, right: 10.0),
-                ),
-
-                  GestureDetector(
-                    child: Text(
-                      "SPANISH", textAlign: TextAlign.center, style: TextStyle(
-                        fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.grey[700]
-                    ),),
-                    onTap: ()
-                    {
-                      //TODO: SPANISH LANGUAGE TRANSLATION
-                    },
-                  ),
-                ],
-              ),
-            ),
 
         ],
       ),
