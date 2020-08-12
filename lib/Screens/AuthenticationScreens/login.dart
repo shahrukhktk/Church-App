@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rccg_app/Screens/ResetPasswordScreens/codeverification.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -62,7 +63,10 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
     final forgotPassword = FlatButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CodeVerification()),);
+      },
       child: Align(
         alignment: Alignment.centerRight,
         child: Text('forgot password',
@@ -114,6 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: forgotPassword,
           ),
 
+          //login via email btn
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: SizedBox(
@@ -133,7 +138,6 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
 
-          //login via email btn
           SizedBox(height: 10,),
 
           //fingerprint btn
