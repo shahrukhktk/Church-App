@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/facerecognition_login.dart';
 import 'package:rccg_app/Screens/ResetPasswordScreens/codeverification.dart';
+import 'package:rccg_app/Screens/widgets/dropdown_widget.dart';
 
 import 'fingerprint_login.dart';
 
@@ -265,9 +266,46 @@ class _SignUpScreenState extends State<SignUpScreen> {
             )
           ),
 
+          //drop down for member type
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  'Member Type', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.normal, color: Colors.black,
+                ),),
 
+                DropDownClass(),
 
-          SizedBox(height: 50,),
+              ],
+            ),
+          ),
+
+          // privacy policy check
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Icon(Icons.check_box, color: Colors.black54,),
+                Padding(
+                  padding: const EdgeInsets.only(left:  10.0),
+                  child: Text(
+                    'By continuing to RCCG, you agree \nto our Terms & Conditions and \nConfirms that you have read our \nPrivacy Policy.', style: TextStyle(
+                    fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.normal, color: Colors.grey, height: 1.2
+                  ),
+                  textAlign: TextAlign.start,),
+                ),
+
+              ],
+            ),
+          ),
+
+          SizedBox(height: 20,),
 
           //signup via email btn
           Padding(
@@ -376,11 +414,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  "Don't have an account yet?  ", textAlign: TextAlign.center, style: TextStyle(
+                  "Already have an account?  ", textAlign: TextAlign.center, style: TextStyle(
                     fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.grey[700]
                 ),),
                 Text(
-                  "Sign Up", textAlign: TextAlign.center, style: TextStyle(
+                  "Login", textAlign: TextAlign.center, style: TextStyle(
                     fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w500, color: Color.fromARGB(255, 39, 23, 112),
                 ),),
               ],
