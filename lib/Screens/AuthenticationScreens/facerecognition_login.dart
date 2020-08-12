@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/login.dart';
 import 'package:rccg_app/Screens/ResetPasswordScreens/codeverification.dart';
 
-class FingerPrintLogin extends StatefulWidget {
+class FaceLogin extends StatefulWidget {
   @override
-  _FingerPrintLoginState createState() => _FingerPrintLoginState();
+  _FaceLoginState createState() => _FaceLoginState();
 }
 
-class _FingerPrintLoginState extends State<FingerPrintLogin> {
+class _FaceLoginState extends State<FaceLogin> {
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class _FingerPrintLoginState extends State<FingerPrintLogin> {
           ),
 
           Center(
-            child: Text('Login via Fingerprint', style: TextStyle(
+            child: Text('Login via Face Recognition', style: TextStyle(
               fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.black,
             ),),
           ),
@@ -42,8 +42,8 @@ class _FingerPrintLoginState extends State<FingerPrintLogin> {
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: GestureDetector(
-                  child: Icon(
-                    Icons.fingerprint, color: Colors.grey, size: 150,
+                  child: Image(
+                    image: AssetImage('images/face_login_ic.png'),
                   ),
                 onTap: ()
                 {
@@ -55,11 +55,32 @@ class _FingerPrintLoginState extends State<FingerPrintLogin> {
           ),
 
           Center(
-            child: Text('Place your thumb on the sensor for quick login', style: TextStyle(
+            child: Text('Please Launch Your Device \nCamera', style: TextStyle(
               fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.normal, color: Colors.grey,
                height: 1.5
             ),
               textAlign: TextAlign.center,
+            ),
+          ),
+
+          SizedBox(height: 50,),
+
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SizedBox(
+              width: 200.0,
+              height: 50.0,
+              child: new RaisedButton(
+                color: Color.fromARGB(255, 39, 23, 112),
+                child: new Text('START', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.white,
+                ),),
+                onPressed: ()
+                {
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()),);
+                },
+              ),
             ),
           ),
 
