@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rccg_app/Screens/AddingChurchScreens/choose_church.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/login.dart';
 import 'package:rccg_app/Screens/ResetPasswordScreens/codeverification.dart';
 
@@ -19,7 +20,7 @@ class _UploadProfilePictureState extends State<UploadProfilePicture> {
         onTap: ()
         {
           Navigator.push(context,
-            MaterialPageRoute(builder: (context) => LoginScreen()),);
+            MaterialPageRoute(builder: (context) => ChooseChurch()),);
         },
         child: Text('Upload Succesful\n\n\n\nOkay\n', style: TextStyle(
           fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.black,
@@ -92,12 +93,19 @@ class _UploadProfilePictureState extends State<UploadProfilePicture> {
 
           SizedBox(height: 40,),
 
-          Center(
-            child: Text('Skip', style: TextStyle(
-                fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.normal, color: Color.fromARGB(255, 39, 23, 112),
-                height: 1.5
-            ),
-              textAlign: TextAlign.center,
+          GestureDetector(
+            onTap: ()
+            {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ChooseChurch()),);
+            },
+            child: Center(
+              child: Text('Skip', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.normal, color: Color.fromARGB(255, 39, 23, 112),
+                  height: 1.5
+              ),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
 

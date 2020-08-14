@@ -2,87 +2,26 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/facerecognition_login.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/signup.dart';
-import 'package:rccg_app/Screens/ResetPasswordScreens/codeverification.dart';
 
-class LoginScreen extends StatefulWidget {
+class ChooseChurch extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _ChooseChurchState createState() => _ChooseChurchState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _ChooseChurchState extends State<ChooseChurch> {
 
   @override
   Widget build(BuildContext context) {
 
-    final emailTextForm = TextFormField(
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
-          hoverColor: Color.fromARGB(255, 39, 23, 112),
-          focusColor: Color.fromARGB(255, 39, 23, 112),
-          labelText: "Email",
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          prefixIcon: Icon(Icons.alternate_email, color: Color.fromARGB(255, 39, 23, 112),),
-          fillColor: Color.fromARGB(255, 39, 23, 112),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.0),
-            borderSide: BorderSide(
-              color: Color.fromARGB(255, 39, 23, 112),
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.0),
-            borderSide: BorderSide(
-              color: Color.fromARGB(255, 39, 23, 112),
-              width: 1.0,
-            ),
-          ),
-        )
-    );
-
-    final passwordTextForm = TextFormField(
-        keyboardType: TextInputType.visiblePassword,
-        decoration: InputDecoration(
-          hoverColor: Color.fromARGB(255, 39, 23, 112),
-          focusColor: Color.fromARGB(255, 39, 23, 112),
-          labelText: "Password",
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          prefixIcon: Icon(Icons.lock_open, color:Color.fromARGB(255, 39, 23, 112),),
-          fillColor: Color.fromARGB(255, 39, 23, 112),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.0),
-            borderSide: BorderSide(
-              color: Color.fromARGB(255, 39, 23, 112),
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(5.0),
-            borderSide: BorderSide(
-              color: Color.fromARGB(255, 39, 23, 112),
-              width: 1.0,
-            ),
-          ),
-        )
-    );
-
-    final forgotPassword = FlatButton(
-      onPressed: () {
-        Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CodeVerification()),);
-      },
-      child: Align(
-        alignment: Alignment.centerRight,
-        child: Text('forgot password',
-          style: TextStyle(
-            fontWeight: FontWeight.normal,
-            fontSize: 15.0,
-            fontFamily: 'SFProDisplay',
-            color: Color.fromARGB(255, 39, 23, 112),
-          ),
-        ),
-      ),
-    );
-
     return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text('Join Your Church', style: TextStyle(
+            fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.white,
+          ),),
+        ),
+        backgroundColor: Color.fromARGB(255, 39, 23, 112),
+      ),
       backgroundColor: Colors.white,
       body: ListView(
         padding: EdgeInsets.all(20),
@@ -104,21 +43,6 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
 
           SizedBox(height: 20,),
-
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: emailTextForm,
-          ),
-
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: passwordTextForm,
-          ),
-
-          Padding(
-            padding: EdgeInsets.only(right: 0.0),
-            child: forgotPassword,
-          ),
 
           //login via email btn
           Padding(
