@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/facerecognition_login.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/login.dart';
+import 'package:rccg_app/Screens/AuthenticationScreens/upload_profile_picture.dart';
 import 'package:rccg_app/Screens/ResetPasswordScreens/codeverification.dart';
 import 'package:rccg_app/Screens/widgets/dropdown_widget.dart';
 
@@ -321,8 +322,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),),
                 onPressed: ()
                 {
-//                  Navigator.push(context,
-//                    MaterialPageRoute(builder: (context) => OrderConfirmation()),);
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => UploadProfilePicture()),);
                 },
               ),
             ),
