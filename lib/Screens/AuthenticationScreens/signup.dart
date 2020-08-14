@@ -236,7 +236,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           },
                         ),
                         Text(
-                          'Pestor', style: TextStyle(
+                          'Pastor', style: TextStyle(
                           fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w600, color: Colors.black,
                         ),),
                       ],
