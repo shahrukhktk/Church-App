@@ -16,6 +16,22 @@ class _AddChurchScreenState extends State<AddChurchScreen> {
   @override
   Widget build(BuildContext context) {
 
+    AlertDialog alertDialog = AlertDialog(
+      title: Icon(Icons.check_circle, color: Color.fromARGB(255, 39, 23, 112), size: 60,),
+      content: GestureDetector(
+        onTap: ()
+        {
+          Navigator.push(context,
+            MaterialPageRoute(builder: (context) => WelcomeChurchScreen()),);
+        },
+        child: Text('God bless you! You will be alerted once your parish comes on board.\n\n\n\nOkay\n', style: TextStyle(
+          fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.black,
+        ),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+
     final parishNameTextForm = TextFormField(
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
@@ -158,10 +174,9 @@ class _AddChurchScreenState extends State<AddChurchScreen> {
             child: emailTextForm,
           ),
 
-
           //Submit church details btn
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.only(left: 10, right: 10, top: 50),
             child: SizedBox(
               width: 200.0,
               height: 50.0,
@@ -172,8 +187,7 @@ class _AddChurchScreenState extends State<AddChurchScreen> {
                 ),),
                 onPressed: ()
                 {
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => WelcomeChurchScreen()),);
+                  showDialog(context: context,  builder: (_) => alertDialog);
                 },
               ),
             ),
