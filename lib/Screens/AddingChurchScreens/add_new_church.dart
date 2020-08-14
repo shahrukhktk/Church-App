@@ -132,6 +132,14 @@ class _AddChurchScreenState extends State<AddChurchScreen> {
 
 
     return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text('Add Your Church', style: TextStyle(
+            fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.white,
+          ),),
+        ),
+        backgroundColor: Color.fromARGB(255, 39, 23, 112),
+      ),
       backgroundColor: Colors.white,
       body: ListView(
         padding: EdgeInsets.all(20),
@@ -143,13 +151,14 @@ class _AddChurchScreenState extends State<AddChurchScreen> {
               alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.all(20),
-                child: Image(image: AssetImage('images/logo.png'), height: 100,),
+                child: Image(image: AssetImage('images/church_logo.png'), height: 100,),
               )),
 
           Center(
-            child: Text('LOGIN', style: TextStyle(
+            child: Text('Please fill the form below to add your Church.', style: TextStyle(
               fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.black,
-            ),),
+            ),
+            textAlign: TextAlign.center,),
           ),
 
           SizedBox(height: 20,),
