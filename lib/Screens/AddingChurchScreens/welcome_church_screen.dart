@@ -14,31 +14,8 @@ class _WelcomeChurchScreenState extends State<WelcomeChurchScreen> {
   @override
   Widget build(BuildContext context) {
 
-    AlertDialog alertDialog = AlertDialog(
-      title: Icon(Icons.check_circle, color: Color.fromARGB(255, 39, 23, 112), size: 60,),
-      content: GestureDetector(
-        onTap: ()
-        {
-          Navigator.push(context,
-            MaterialPageRoute(builder: (context) => ChooseChurch()),);
-        },
-        child: Text('Joined Succesful\n\n\n\nOkay\n', style: TextStyle(
-          fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.black,
-        ),
-          textAlign: TextAlign.center,
-        ),
-      ),
-    );
 
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text('Join Your Church', style: TextStyle(
-            fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.white,
-          ),),
-        ),
-        backgroundColor: Color.fromARGB(255, 39, 23, 112),
-      ),
       backgroundColor: Colors.white,
       body: ListView(
         padding: EdgeInsets.all(20),
@@ -50,262 +27,63 @@ class _WelcomeChurchScreenState extends State<WelcomeChurchScreen> {
               alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.all(20),
-                child: Image(image: AssetImage('images/church_logo.png'), height: 130,),
+                child: Text('WELCOME!', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 25.0, fontWeight: FontWeight.w600, color: Color.fromARGB(255, 39, 23, 112),
+                ),),
+              )),
+
+          Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Image(image: AssetImage('images/church_welcome.png'), height: 250,),
               )),
 
           SizedBox(height: 20,),
 
-          SearchBarClass(),
+          Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Text('Daddy & Mummy GO', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.w600, color: Colors.black
+                ),),
+              )),
 
-          SizedBox(height: 40,),
-
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: <Widget>[
-
-                SizedBox(
-                  height: 220,
-                  width: 200,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white
-                    ),
-                    child: Card(
-                      elevation: 2,
-                      child: Column(
-                        children: <Widget>[
-
-
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Image(image: AssetImage('images/logo.png'), height: 50,),
-                          ),
-
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text('RCCG CITY OF DAVID', style: TextStyle(
-                              fontFamily: 'SFProDisplay', fontSize: 14.0, fontWeight: FontWeight.w600, color: Colors.black,
-                            ),),
-                          ),
-
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Icon(Icons.location_on, color: Color.fromARGB(255, 39, 23, 112),),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 5.0),
-                                child: Text('Logos State', style: TextStyle(
-                                  fontFamily: 'SFProDisplay', fontSize: 14.0, fontWeight: FontWeight.w600, color: Color.fromARGB(255, 39, 23, 112),
-                                ),),
-                              ),
-                            ],
-                          ),
-
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text('Pst. KINGSLEY DAVID', style: TextStyle(
-                              fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.w600, color: Colors.black,
-                            ),),
-                          ),
-
-                          GestureDetector(
-                            onTap: ()
-                            {
-                              showDialog(context: context,  builder: (_) => alertDialog);
-                            },
-                            child: SizedBox(
-                              height: 30,
-                              width: 120,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 39, 23, 112),
-                                ),
-                                child: Center(
-                                  child: Text('JOIN', style: TextStyle(
-                                    fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.w600, color: Colors.white,
-                                  ),),
-                                ),
-                              ),
-                            ),
-                          ),
-
-
-                        ],
-                      ),
-                    ),
-                  ),
+          Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.only(left:20, right: 20),
+                child: Text('We are most delighted to welcome you to church, and as you walk into church, you will be blessedtremendously in Jesus’ name. Amen!', style: TextStyle(
+                    fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.grey, height: 1.2
                 ),
+                textAlign: TextAlign.center,),
+              )),
 
-                SizedBox(width: 10,),
-
-                SizedBox(
-                  height: 220,
-                  width: 200,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white
-                    ),
-                    child: Card(
-                      elevation: 2,
-                      child: Column(
-                        children: <Widget>[
-
-
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Image(image: AssetImage('images/logo.png'), height: 50,),
-                          ),
-
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text('RCCG CITY OF DAVID', style: TextStyle(
-                              fontFamily: 'SFProDisplay', fontSize: 14.0, fontWeight: FontWeight.w600, color: Colors.black,
-                            ),),
-                          ),
-
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Icon(Icons.location_on, color: Color.fromARGB(255, 39, 23, 112),),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 5.0),
-                                child: Text('Logos State', style: TextStyle(
-                                  fontFamily: 'SFProDisplay', fontSize: 14.0, fontWeight: FontWeight.w600, color: Color.fromARGB(255, 39, 23, 112),
-                                ),),
-                              ),
-                            ],
-                          ),
-
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text('Pst. KINGSLEY DAVID', style: TextStyle(
-                              fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.w600, color: Colors.black,
-                            ),),
-                          ),
-
-                          SizedBox(
-                            height: 30,
-                            width: 120,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 39, 23, 112),
-                              ),
-                              child: Center(
-                                child: Text('JOIN', style: TextStyle(
-                                  fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.w600, color: Colors.white,
-                                ),),
-                              ),
-                            ),
-                          ),
-
-
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-
-                SizedBox(width: 10,),
-
-                SizedBox(
-                  height: 220,
-                  width: 200,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white
-                    ),
-                    child: Card(
-                      elevation: 2,
-                      child: Column(
-                        children: <Widget>[
-
-
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Image(image: AssetImage('images/logo.png'), height: 50,),
-                          ),
-
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text('RCCG CITY OF DAVID', style: TextStyle(
-                              fontFamily: 'SFProDisplay', fontSize: 14.0, fontWeight: FontWeight.w600, color: Colors.black,
-                            ),),
-                          ),
-
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Icon(Icons.location_on, color: Color.fromARGB(255, 39, 23, 112),),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 5.0),
-                                child: Text('Logos State', style: TextStyle(
-                                  fontFamily: 'SFProDisplay', fontSize: 14.0, fontWeight: FontWeight.w600, color: Color.fromARGB(255, 39, 23, 112),
-                                ),),
-                              ),
-                            ],
-                          ),
-
-                          Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text('Pst. KINGSLEY DAVID', style: TextStyle(
-                              fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.w600, color: Colors.black,
-                            ),),
-                          ),
-
-                          SizedBox(
-                            height: 30,
-                            width: 120,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 39, 23, 112),
-                              ),
-                              child: Center(
-                                child: Text('JOIN', style: TextStyle(
-                                  fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.w600, color: Colors.white,
-                                ),),
-                              ),
-                            ),
-                          ),
-
-
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-
-              ],
-            ),
-          ),
-
-          SizedBox(height: 40,),
 
           GestureDetector(
             onTap: ()
             {
-              Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SignUpScreen()),);
+//              showDialog(context: context,  builder: (_) => alertDialog);
             },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "Can’t find your church?   ", textAlign: TextAlign.center, style: TextStyle(
-                    fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.grey[700]
-                ),),
-                Text(
-                  "Click Here", textAlign: TextAlign.center, style: TextStyle(
-                    fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w500, color: Color.fromARGB(255, 39, 23, 112),
-                ),),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 30.0),
+              child: SizedBox(
+                height: 55,
+                width: 150,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 39, 23, 112),
+                  ),
+                  child: Center(
+                    child: Text('WALK INTO CHURCH', style: TextStyle(
+                      fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.w600, color: Colors.white,
+                    ),),
+                  ),
+                ),
+              ),
             ),
           ),
-
-          SizedBox(height: 20,),
 
 
         ],
