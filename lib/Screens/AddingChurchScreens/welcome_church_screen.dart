@@ -64,6 +64,8 @@ class _WelcomeChurchScreenState extends State<WelcomeChurchScreen> {
           GestureDetector(
             onTap: ()
             {
+//              Navigator.push(context,
+//                MaterialPageRoute(builder: (context) => FeedScreen()),);
 //              showDialog(context: context,  builder: (_) => alertDialog);
             },
             child: Padding(
