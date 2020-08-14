@@ -24,8 +24,8 @@ class _AddChurchScreenState extends State<AddChurchScreen> {
           Navigator.push(context,
             MaterialPageRoute(builder: (context) => WelcomeChurchScreen()),);
         },
-        child: Text('God bless you! You will be alerted once your parish comes on board.\n\n\n\nOkay\n', style: TextStyle(
-          fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.black,
+        child: Text('God bless you! You will be alerted once your parish comes on board.\n\n\nOkay\n', style: TextStyle(
+          fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.black, height: 1.5
         ),
           textAlign: TextAlign.center,
         ),
