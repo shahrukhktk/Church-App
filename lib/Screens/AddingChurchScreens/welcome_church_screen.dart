@@ -1,16 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rccg_app/Screens/AddingChurchScreens/welcome_church_screen.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/facerecognition_login.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/signup.dart';
 import 'package:rccg_app/Screens/widgets/searchbar.dart';
 
-class ChooseChurch extends StatefulWidget {
+class WelcomeChurchScreen extends StatefulWidget {
   @override
-  _ChooseChurchState createState() => _ChooseChurchState();
+  _WelcomeChurchScreenState createState() => _WelcomeChurchScreenState();
 }
 
-class _ChooseChurchState extends State<ChooseChurch> {
+class _WelcomeChurchScreenState extends State<WelcomeChurchScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class _ChooseChurchState extends State<ChooseChurch> {
         onTap: ()
         {
           Navigator.push(context,
-            MaterialPageRoute(builder: (context) => WelcomeChurchScreen()),);
+            MaterialPageRoute(builder: (context) => ChooseChurch()),);
         },
         child: Text('Joined Succesful\n\n\n\nOkay\n', style: TextStyle(
           fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.black,
@@ -289,7 +288,7 @@ class _ChooseChurchState extends State<ChooseChurch> {
             onTap: ()
             {
               Navigator.push(context,
-                MaterialPageRoute(builder: (context) => WelcomeChurchScreen()),);
+                MaterialPageRoute(builder: (context) => SignUpScreen()),);
             },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
