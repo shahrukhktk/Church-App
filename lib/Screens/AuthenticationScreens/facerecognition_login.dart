@@ -13,6 +13,22 @@ class _FaceLoginState extends State<FaceLogin> {
   @override
   Widget build(BuildContext context) {
 
+    AlertDialog alertDialog = AlertDialog(
+      title: Icon(Icons.check_circle, color: Color.fromARGB(255, 39, 23, 112), size: 60,),
+      content: GestureDetector(
+        onTap: ()
+        {
+          Navigator.push(context,
+            MaterialPageRoute(builder: (context) => LoginScreen()),);
+        },
+        child: Text('Face matched\n\n\n\nOkay\n', style: TextStyle(
+          fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.black,
+        ),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: ListView(
@@ -77,8 +93,7 @@ class _FaceLoginState extends State<FaceLogin> {
                 ),),
                 onPressed: ()
                 {
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()),);
+                  showDialog(context: context,  builder: (_) => alertDialog);
                 },
               ),
             ),

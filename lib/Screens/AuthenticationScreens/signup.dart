@@ -35,6 +35,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
 
+    AlertDialog alertDialog = AlertDialog(
+      title: Icon(Icons.check_circle, color: Color.fromARGB(255, 39, 23, 112), size: 60,),
+      content: GestureDetector(
+        onTap: ()
+        {
+          Navigator.push(context,
+            MaterialPageRoute(builder: (context) => UploadProfilePicture()),);
+        },
+        child: Text('Account Registered Successfully\n\n\n\nOkay\n', style: TextStyle(
+          fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.normal, color: Colors.black,
+        ),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+
     final usernameTextForm = TextFormField(
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
@@ -322,8 +338,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),),
                 onPressed: ()
                 {
-                  Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => UploadProfilePicture()),);
+                  showDialog(context: context,  builder: (_) => alertDialog);
                 },
               ),
             ),
