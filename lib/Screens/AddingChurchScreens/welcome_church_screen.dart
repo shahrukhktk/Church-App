@@ -60,7 +60,6 @@ class _WelcomeChurchScreenState extends State<WelcomeChurchScreen> {
                 textAlign: TextAlign.center,),
               )),
 
-
           GestureDetector(
             onTap: ()
             {
@@ -86,7 +85,6 @@ class _WelcomeChurchScreenState extends State<WelcomeChurchScreen> {
               ),
             ),
           ),
-
 
         ],
       ),
