@@ -57,6 +57,18 @@ flutter:
     - images/rededicated.png
     - images/rooms.png
     - images/schedule.png
+    - images/image1.png
+    - images/image2.png
+    - images/image3.png
+    - images/image4.png
+    - images/post_image.png
+    - images/post_image2.png
+    - images/live1.png
+    - images/live2.png
+    - images/live3.png
+    - images/ic_comment.png
+    - images/ic_like.png
+    - images/ic_share.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

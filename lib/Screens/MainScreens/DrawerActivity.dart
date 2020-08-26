@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/Constant/constant.dart';
 
@@ -147,6 +150,318 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
 
       body: ListView(
         children: <Widget>[
+
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Text('Stories', style: TextStyle(
+              fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.black,
+            ),),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: <Widget>[
+                  Image(image: AssetImage('images/image1.png'),),
+                  Image(image: AssetImage('images/image2.png'),),
+                  Image(image: AssetImage('images/image3.png'),),
+                  Image(image: AssetImage('images/image4.png'),),
+
+                ],
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image(image: AssetImage('images/post_image.png'),),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text('Live Sessions', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.black,
+                ),),
+
+                SizedBox(
+                  height: 40,
+                  width: 100,
+                  child: FlatButton(
+                    color: AppColor.themeColor,
+                    onPressed: (){
+                      //TODO Go To Live Session
+                    },
+                    child: Center(
+                      child: Text('View All', style: TextStyle(
+                        fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white,
+                      ),),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: (){
+                      //NAVIGATE TO Live Session 1
+                    },
+                    child: Stack(
+                      children: <Widget>[
+                        Image(image: AssetImage('images/live1.png'),),
+                        Positioned(
+                          child: SizedBox(
+                            height: 20,
+                            width: 40,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: Center(
+                                child: Text('Live', style: TextStyle(
+                                  fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.white,
+                                ),),
+                              ),
+                            ),
+                          ),
+                          top: 20,
+                          left: 95,
+                        ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      //NAVIGATE TO LIVE SESSION 2
+                    },
+                    child: Stack(
+                      children: <Widget>[
+                        Image(image: AssetImage('images/live2.png'),),
+                        Positioned(
+                          child: SizedBox(
+                            height: 20,
+                            width: 40,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: Center(
+                                child: Text('Live', style: TextStyle(
+                                  fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.white,
+                                ),),
+                              ),
+                            ),
+                          ),
+                          top: 20,
+                          left: 95,
+                        ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      //NAVIGATE TO LIVE SESSION 3
+                    },
+                    child: Stack(
+                      children: <Widget>[
+                        Image(image: AssetImage('images/live3.png'),),
+                        Positioned(
+                          child: SizedBox(
+                            height: 20,
+                            width: 40,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: Center(
+                                child: Text('Live', style: TextStyle(
+                                  fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.white,
+                                ),),
+                              ),
+                            ),
+                          ),
+                          top: 20,
+                          left: 95,
+                        ),
+                      ],
+                    ),
+                  ),
+
+                ],
+              ),
+            ),
+          ),
+
+          Divider(
+            thickness: 1,
+            height: 10,
+            color: Colors.grey,
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              children: <Widget>[
+                Image(image: AssetImage('images/logo.png'), height: 50,),
+                Padding(
+                  padding: const EdgeInsets.only(left: 12.0, right: 12),
+                  child: Text('RCCG HQ', style: TextStyle(
+                    fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.black,
+                  ),),
+                ),
+
+                Icon(Icons.check_circle, color: AppColor.themeColor, size: 18,),
+
+                Padding(
+                  padding: const EdgeInsets.only(left: 150.0),
+                  child: Icon(Icons.more_vert),
+                ),
+
+              ],
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Stack(
+              children: <Widget>[
+                Image(image: AssetImage('images/post_image2.png'),),
+                Positioned(
+                  bottom: 20,
+                  right: 10,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Image(image: AssetImage('images/ic_like.png'),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Image(image: AssetImage('images/ic_comment.png'),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Image(image: AssetImage('images/ic_share.png'),),
+                      ),
+
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Text('146 Likes', style: TextStyle(
+              fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.blue,
+            ),),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+            child: Text('The blessings of the lord will manifest in your family; whatever you do will prosper! If you believe it shout a very loud amen!', style: TextStyle(
+              fontFamily: 'SFProDisplay', fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.black,
+            ),),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0,top: 10, right: 15.0, bottom: 10),
+            child: Text('View All 15 Comments', style: TextStyle(
+              fontFamily: 'SFProDisplay', fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.grey,
+            ),),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: SizedBox(
+              height: 120,
+              width: 400,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: AppColor.decentgrey,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage('images/user_image.png'),
+                          ),
+                        ),
+
+                        Text('@zainabchukwu: ', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.normal, color: Colors.black,
+                        ),),
+
+                        Text('I was highly blessed ', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.normal, color: Colors.grey,
+                        ),),
+
+                        Icon(Icons.favorite, color: Colors.red,),
+
+                        Padding(
+                          padding: const EdgeInsets.only(left: 35.0),
+                          child: Icon(Icons.thumb_up, color: AppColor.themeColor,),
+                        ),
+
+                      ],
+                    ),
+
+                    Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage('images/user_image.png'),
+                          ),
+                        ),
+
+                        Text('@bolanlepepperdem: ', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.normal, color: Colors.black,
+                        ),),
+
+                        Text('Me too! ', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.normal, color: Colors.grey,
+                        ),),
+
+                        Icon(Icons.favorite, color: Colors.red,),
+
+                        Padding(
+                          padding: const EdgeInsets.only(left: 35.0),
+                          child: Icon(Icons.thumb_up, color: AppColor.themeColor,),
+                        ),
+
+                      ],
+                    ),
+
+                  ],
+                ),
+              ),
+            ),
+          ),
 
         ],
       ),
