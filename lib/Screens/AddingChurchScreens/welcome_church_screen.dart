@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/facerecognition_login.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/signup.dart';
+import 'package:rccg_app/Screens/MainScreens/DrawerActivity.dart';
 import 'package:rccg_app/Screens/widgets/searchbar.dart';
 
 class WelcomeChurchScreen extends StatefulWidget {
@@ -63,9 +64,8 @@ class _WelcomeChurchScreenState extends State<WelcomeChurchScreen> {
           GestureDetector(
             onTap: ()
             {
-//              Navigator.push(context,
-//                MaterialPageRoute(builder: (context) => FeedScreen()),);
-//              showDialog(context: context,  builder: (_) => alertDialog);
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MainDrawerActivity()),);
             },
             child: Padding(
               padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 30.0),

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rccg_app/Screens/AddingChurchScreens/choose_church.dart';
+import 'package:rccg_app/Screens/AddingChurchScreens/welcome_church_screen.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/facerecognition_login.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/signup.dart';
 import 'package:rccg_app/Screens/ResetPasswordScreens/codeverification.dart';
@@ -135,8 +137,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),),
                 onPressed: ()
                 {
-//                  Navigator.push(context,
-//                    MaterialPageRoute(builder: (context) => OrderConfirmation()),);
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => WelcomeChurchScreen()),);
                 },
               ),
             ),
