@@ -11,10 +11,24 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('Home', style: TextStyle(
-          fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white,
-        ),),
+        title:  Row(
+          children: <Widget>[
+            Image(image: AssetImage('images/logo.png'), height: 30,),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text('RCCG', style: TextStyle(
+                fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.white,
+              ),),
+            ),
+          ],
+        ),
         backgroundColor: AppColor.themeColor,
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: Icon(Icons.room),
+          ),
+        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -130,6 +144,13 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
           ],
         ),
       ),
+
+      body: ListView(
+        children: <Widget>[
+
+        ],
+      ),
+
     );
   }
 }
