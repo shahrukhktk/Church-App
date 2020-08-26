@@ -10,8 +10,34 @@ class MainDrawerActivity extends StatefulWidget {
 }
 
 class _MainDrawerActivityState extends State<MainDrawerActivity> {
+
   @override
   Widget build(BuildContext context) {
+    final commentForm = TextFormField(
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoration(
+          hoverColor: Color.fromARGB(255, 39, 23, 112),
+          focusColor: Color.fromARGB(255, 39, 23, 112),
+          labelText: "Add a comment",
+          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          prefixIcon: Icon(Icons.insert_emoticon, color: Color.fromARGB(255, 39, 23, 112),),
+          fillColor: Color.fromARGB(255, 39, 23, 112),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(25.0),
+            borderSide: BorderSide(
+              color: Color.fromARGB(255, 39, 23, 112),
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(25.0),
+            borderSide: BorderSide(
+              color: Color.fromARGB(255, 39, 23, 112),
+              width: 1.0,
+            ),
+          ),
+        )
+    );
+
     return Scaffold(
       appBar: AppBar(
         title:  Row(
@@ -307,6 +333,7 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
             ),
           ),
 
+          //first post
           Divider(
             thickness: 1,
             height: 10,
@@ -461,6 +488,173 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
                 ),
               ),
             ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(15.0,),
+            child: commentForm,
+          ),
+
+          //2nd post
+          Divider(
+            thickness: 1,
+            height: 10,
+            color: Colors.grey,
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              children: <Widget>[
+                Image(image: AssetImage('images/logo.png'), height: 50,),
+                Padding(
+                  padding: const EdgeInsets.only(left: 12.0, right: 12),
+                  child: Text('Pst. David', style: TextStyle(
+                    fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.black,
+                  ),),
+                ),
+
+                Icon(Icons.check_circle, color: AppColor.themeColor, size: 18,),
+
+                Padding(
+                  padding: const EdgeInsets.only(left: 150.0),
+                  child: Icon(Icons.more_vert),
+                ),
+
+              ],
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Stack(
+              children: <Widget>[
+                Image(image: AssetImage('images/post_image3.png'),),
+                Positioned(
+                  bottom: 20,
+                  right: 10,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Image(image: AssetImage('images/ic_like.png'),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Image(image: AssetImage('images/ic_comment.png'),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Image(image: AssetImage('images/ic_share.png'),),
+                      ),
+
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Text('146 Likes', style: TextStyle(
+              fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.blue,
+            ),),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+            child: Text('The blessings of the lord will manifest in your family; whatever you do will prosper! If you believe it shout a very loud amen!', style: TextStyle(
+              fontFamily: 'SFProDisplay', fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.black,
+            ),),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left: 15.0,top: 10, right: 15.0, bottom: 10),
+            child: Text('View All 15 Comments', style: TextStyle(
+              fontFamily: 'SFProDisplay', fontSize: 14.0, fontWeight: FontWeight.normal, color: Colors.grey,
+            ),),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: SizedBox(
+              height: 120,
+              width: 400,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: AppColor.decentgrey,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage('images/user_image.png'),
+                          ),
+                        ),
+
+                        Text('@zainabchukwu: ', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.normal, color: Colors.black,
+                        ),),
+
+                        Text('I was highly blessed ', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.normal, color: Colors.grey,
+                        ),),
+
+                        Icon(Icons.favorite, color: Colors.red,),
+
+                        Padding(
+                          padding: const EdgeInsets.only(left: 35.0),
+                          child: Icon(Icons.thumb_up, color: AppColor.themeColor,),
+                        ),
+
+                      ],
+                    ),
+
+                    Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage('images/user_image.png'),
+                          ),
+                        ),
+
+                        Text('@bolanlepepperdem: ', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.normal, color: Colors.black,
+                        ),),
+
+                        Text('Me too! ', style: TextStyle(
+                          fontFamily: 'SFProDisplay', fontSize: 12.0, fontWeight: FontWeight.normal, color: Colors.grey,
+                        ),),
+
+                        Icon(Icons.favorite, color: Colors.red,),
+
+                        Padding(
+                          padding: const EdgeInsets.only(left: 35.0),
+                          child: Icon(Icons.thumb_up, color: AppColor.themeColor,),
+                        ),
+
+                      ],
+                    ),
+
+                  ],
+                ),
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(15.0,),
+            child: commentForm,
           ),
 
         ],
