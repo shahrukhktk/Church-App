@@ -49,6 +49,14 @@ flutter:
     - images/church_logo.png
     - images/church_welcome.png
     - images/user_image.png
+    - images/channel.png
+    - images/logout.png
+    - images/manage_assigned.png
+    - images/notes.png
+    - images/payment.png
+    - images/rededicated.png
+    - images/rooms.png
+    - images/schedule.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
