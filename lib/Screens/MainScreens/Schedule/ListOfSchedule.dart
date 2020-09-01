@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/Constant/constant.dart';
+import 'package:rccg_app/Screens/MainScreens/Schedule/CreateSchedule.dart';
 
 import 'ViewSchedule.dart';
 
@@ -45,7 +46,8 @@ class _ScheduleListState extends State<ScheduleList> {
             padding: const EdgeInsets.only(right: 20.0),
             child: GestureDetector(
               onTap: (){
-
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CreateNewSchedule()));
               },
                 child: Icon(Icons.add, color: Colors.white,)),
           ),

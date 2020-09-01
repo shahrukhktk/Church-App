@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/login.dart';
 import 'package:rccg_app/Screens/Constant/constant.dart';
 import 'package:rccg_app/Screens/MainScreens/LiveSession.dart';
+import 'package:rccg_app/Screens/MainScreens/Notes/ListOfNotes.dart';
 import 'package:rccg_app/Screens/MainScreens/Schedule/ListOfSchedule.dart';
 import 'package:rccg_app/Screens/MainScreens/daily_scripture.dart';
 import 'package:rccg_app/Screens/MainScreens/upload_story.dart';
@@ -30,7 +31,7 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
           // Navigator.push(context,
           //   MaterialPageRoute(builder: (context) => UploadProfilePicture()),);
         },
-        child: Column(
+        child: ListView(
           children: <Widget>[
 
             Padding(
@@ -323,7 +324,7 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
 
             ListTile(
               onTap: (){
-
+                Navigator.push(context, MaterialPageRoute(builder: (context) => NotesList()));
               },
               leading: Image(image: AssetImage('images/notes.png'),),
               title: Text('Notes', style: TextStyle(
