@@ -80,6 +80,13 @@ flutter:
     - images/scripture3.png
     - images/download_icon.png
     - images/share_icon.png
+    - images/livestream1.png
+    - images/livestream2.png
+    - images/livestream3.png
+    - images/livestream4.png
+    - images/livestream5.png
+    - images/livestream6.png
+    - images/schedule_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

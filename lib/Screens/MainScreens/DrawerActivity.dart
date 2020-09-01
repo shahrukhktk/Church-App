@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/AuthenticationScreens/login.dart';
 import 'package:rccg_app/Screens/Constant/constant.dart';
 import 'package:rccg_app/Screens/MainScreens/LiveSession.dart';
+import 'package:rccg_app/Screens/MainScreens/Schedule/ListOfSchedule.dart';
 import 'package:rccg_app/Screens/MainScreens/daily_scripture.dart';
 import 'package:rccg_app/Screens/MainScreens/upload_story.dart';
 import 'package:rccg_app/Screens/widgets/searchbar.dart';
@@ -312,7 +313,7 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
 
             ListTile(
               onTap: (){
-
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ScheduleList()));
               },
               leading: Image(image: AssetImage('images/schedule.png'),),
               title: Text('Schedule', style: TextStyle(
