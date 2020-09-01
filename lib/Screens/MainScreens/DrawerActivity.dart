@@ -2,7 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rccg_app/Screens/AuthenticationScreens/login.dart';
 import 'package:rccg_app/Screens/Constant/constant.dart';
+import 'package:rccg_app/Screens/MainScreens/LiveSession.dart';
 import 'package:rccg_app/Screens/MainScreens/daily_scripture.dart';
 import 'package:rccg_app/Screens/MainScreens/upload_story.dart';
 import 'package:rccg_app/Screens/widgets/searchbar.dart';
@@ -357,7 +359,7 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
               padding: const EdgeInsets.only(top: 5.0),
               child: ListTile(
                 onTap: (){
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
                 },
                 leading: Image(image: AssetImage('images/logout.png'),),
                 title: Text('Logout', style: TextStyle(
@@ -436,7 +438,7 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
                     color: AppColor.themeColor,
                     onPressed: (){
                       Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Scriptures()),);
+                        MaterialPageRoute(builder: (context) => LiveSessionScreen()),);
                     },
                     child: Center(
                       child: Text('View All', style: TextStyle(
