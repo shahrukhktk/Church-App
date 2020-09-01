@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/Constant/constant.dart';
+import 'package:rccg_app/Screens/MainScreens/daily_scripture.dart';
+import 'package:rccg_app/Screens/MainScreens/upload_story.dart';
 import 'package:rccg_app/Screens/widgets/searchbar.dart';
 
 class MainDrawerActivity extends StatefulWidget {
@@ -384,7 +386,12 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: <Widget>[
-                  Image(image: AssetImage('images/image1.png'),),
+                  GestureDetector(
+                      child: Image(image: AssetImage('images/image1.png'),),
+                  onTap: (){
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => UploadStory()),);
+                  },),
                   Image(image: AssetImage('images/image2.png'),),
                   Image(image: AssetImage('images/image3.png'),),
                   Image(image: AssetImage('images/image4.png'),),
@@ -395,8 +402,21 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
           ),
 
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image(image: AssetImage('images/post_image.png'),),
+            padding: const EdgeInsets.all(15.0),
+            child: Text('Daily Scripture', style: TextStyle(
+              fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.black,
+            ),),
+          ),
+
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Scriptures()),);
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image(image: AssetImage('images/post_image.png'),),
+            ),
           ),
 
           Padding(
@@ -415,7 +435,8 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
                   child: FlatButton(
                     color: AppColor.themeColor,
                     onPressed: (){
-                      //TODO Go To Live Session
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Scriptures()),);
                     },
                     child: Center(
                       child: Text('View All', style: TextStyle(

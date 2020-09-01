@@ -73,6 +73,12 @@ flutter:
     - images/jason.png
     - images/micheal.png
     - images/isabella.png
+    - images/upload_story_image.png
+    - images/scripture1.png
+    - images/scripture2.png
+    - images/scripture3.png
+    - images/download_icon.png
+    - images/share_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
