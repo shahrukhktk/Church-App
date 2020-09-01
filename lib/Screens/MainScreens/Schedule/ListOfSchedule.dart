@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/Constant/constant.dart';
 
+import 'ViewSchedule.dart';
+
 class ScheduleList extends StatefulWidget {
   @override
   _ScheduleListState createState() => _ScheduleListState();
@@ -14,6 +16,11 @@ class _ScheduleListState extends State<ScheduleList> {
     Widget listOfSchedule(String title, String subtitle, String trailText)
     {
       return ListTile(
+        onTap: ()
+        {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ViewScheduleScreen()));
+        },
         leading: Image(image: AssetImage('images/schedule_icon.png'),),
         title: Text('$title', style: TextStyle(
           fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black,
@@ -36,7 +43,11 @@ class _ScheduleListState extends State<ScheduleList> {
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
-            child: Icon(Icons.add, color: Colors.white,),
+            child: GestureDetector(
+              onTap: (){
+
+              },
+                child: Icon(Icons.add, color: Colors.white,)),
           ),
         ],
         backgroundColor: AppColor.themeColor,
