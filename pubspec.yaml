@@ -70,6 +70,9 @@ flutter:
     - images/ic_comment.png
     - images/ic_like.png
     - images/ic_share.png
+    - images/jason.png
+    - images/micheal.png
+    - images/isabella.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

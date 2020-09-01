@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rccg_app/Screens/Constant/constant.dart';
+import 'package:rccg_app/Screens/widgets/searchbar.dart';
 
 class MainDrawerActivity extends StatefulWidget {
   @override
@@ -13,6 +14,181 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
 
   @override
   Widget build(BuildContext context) {
+
+    AlertDialog alertDialog = AlertDialog(
+      title: Text('Share with', style: TextStyle(
+        fontFamily: 'SFProDisplay', fontSize: 18.0, fontWeight: FontWeight.bold, color: AppColor.themeColor,
+      ),),
+      content: GestureDetector(
+        onTap: ()
+        {
+          // Navigator.push(context,
+          //   MaterialPageRoute(builder: (context) => UploadProfilePicture()),);
+        },
+        child: Column(
+          children: <Widget>[
+
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0, bottom: 12),
+              child: SearchBarClass(),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: ListTile(
+                leading: Image(image: AssetImage('images/jason.png'),),
+                title: Text('Jason Walberg', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.black,
+                ),),
+                trailing: SizedBox(
+                  height: 30,
+                  width: 60,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: AppColor.themeColor
+                    ),
+                    child: Center(
+                      child: Text('Share', style: TextStyle(
+                        fontFamily: 'SFProDisplay', fontSize: 13.0, fontWeight: FontWeight.bold, color: Colors.white,
+                      ),),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            Divider(
+              thickness: 1,
+              color: AppColor.decentgrey,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: ListTile(
+                leading: Image(image: AssetImage('images/micheal.png'),),
+                title: Text('Micheal', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.black,
+                ),),
+                trailing: SizedBox(
+                  height: 30,
+                  width: 60,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: AppColor.themeColor
+                    ),
+                    child: Center(
+                      child: Text('Share', style: TextStyle(
+                        fontFamily: 'SFProDisplay', fontSize: 13.0, fontWeight: FontWeight.bold, color: Colors.white,
+                      ),),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            Divider(
+              thickness: 1,
+              color: AppColor.decentgrey,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: ListTile(
+                leading: Image(image: AssetImage('images/isabella.png'),),
+                title: Text('Isabella Smith', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.black,
+                ),),
+                trailing: SizedBox(
+                  height: 30,
+                  width: 60,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: AppColor.themeColor
+                    ),
+                    child: Center(
+                      child: Text('Share', style: TextStyle(
+                        fontFamily: 'SFProDisplay', fontSize: 13.0, fontWeight: FontWeight.bold, color: Colors.white,
+                      ),),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            Divider(
+              thickness: 1,
+              color: AppColor.decentgrey,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: ListTile(
+                leading: Image(image: AssetImage('images/jason.png'),),
+                title: Text('Jason Walberg', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.black,
+                ),),
+                trailing: SizedBox(
+                  height: 30,
+                  width: 60,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: AppColor.themeColor
+                    ),
+                    child: Center(
+                      child: Text('Share', style: TextStyle(
+                        fontFamily: 'SFProDisplay', fontSize: 13.0, fontWeight: FontWeight.bold, color: Colors.white,
+                      ),),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            Divider(
+              thickness: 1,
+              color: AppColor.decentgrey,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0),
+              child: ListTile(
+                leading: Image(image: AssetImage('images/micheal.png'),),
+                title: Text('Micheal', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 15.0, fontWeight: FontWeight.bold, color: Colors.black,
+                ),),
+                trailing: SizedBox(
+                  height: 30,
+                  width: 60,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: AppColor.themeColor
+                    ),
+                    child: Center(
+                      child: Text('Share', style: TextStyle(
+                        fontFamily: 'SFProDisplay', fontSize: 13.0, fontWeight: FontWeight.bold, color: Colors.white,
+                      ),),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            Divider(
+              thickness: 1,
+              color: AppColor.decentgrey,
+            ),
+
+
+          ],
+        ),
+      ),
+    );
+
     final commentForm = TextFormField(
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
@@ -168,6 +344,24 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
               title: Text('Re-dedicate', style: TextStyle(
                 fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.black,
               ),),
+            ),
+
+            Divider(
+              thickness: 1,
+              color: Colors.grey,
+            ),
+
+            Padding(
+              padding: const EdgeInsets.only(top: 5.0),
+              child: ListTile(
+                onTap: (){
+
+                },
+                leading: Image(image: AssetImage('images/logout.png'),),
+                title: Text('Logout', style: TextStyle(
+                  fontFamily: 'SFProDisplay', fontSize: 16.0, fontWeight: FontWeight.w500, color: Colors.black,
+                ),),
+              ),
             ),
 
           ],
@@ -386,7 +580,11 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 8.0),
-                        child: Image(image: AssetImage('images/ic_share.png'),),
+                        child: GestureDetector(
+                            onTap: (){
+                              showDialog(context: context,  builder: (_) => alertDialog);
+                            },
+                            child: Image(image: AssetImage('images/ic_share.png'),)),
                       ),
 
                     ],
@@ -548,7 +746,11 @@ class _MainDrawerActivityState extends State<MainDrawerActivity> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(right: 8.0),
-                        child: Image(image: AssetImage('images/ic_share.png'),),
+                        child: GestureDetector(
+                            onTap: (){
+                              showDialog(context: context,  builder: (_) => alertDialog);
+                            },
+                            child: Image(image: AssetImage('images/ic_share.png'),)),
                       ),
 
                     ],
